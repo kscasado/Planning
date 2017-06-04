@@ -41,6 +41,18 @@ export default (app) => {
         failureRedirect: '/login'
       })
     );
+    app.get('/auth/instagram/callback',
+      passport.authenticate('instagram', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+      })
+    );
+    app.get('/auth/facebook/callback',
+      passport.authenticate('facebook', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+      })
+    );
   }
 
   // topic routes
